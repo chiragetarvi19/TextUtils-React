@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-// import Logo from "./public/favicon-32x32.png"
 
 export default function Navbar(props) {
   return (

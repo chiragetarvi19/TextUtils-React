@@ -5,17 +5,14 @@ export default function TextForm(props) {
   const [text, setText] = useState("");
 
   const handleOnChange = (event) => {
-    // console.log("On Change");
     setText(event.target.value);
   };
   const handleUpClick = () => {
-    // console.log("upClick");
     let newText = text.toUpperCase();
     setText(newText);
     props.showAlert("Converted to UpperCase", "success");
   };
   const handleLoClick = () => {
-    // console.log("upClick");
     let newText = text.toLowerCase();
     setText(newText);
     props.showAlert("Converted to LowerCase", "success");
@@ -74,13 +71,13 @@ export default function TextForm(props) {
         <h2>Your Text Summary</h2>
         <p>
           {
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length
           }{" "}
           words and {text.length} characters
         </p>
-        <p>{text.split(" ").filter((element) => {
+        <p>{text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length * 0.008} minutes read</p>
         <h2>Preview</h2>
