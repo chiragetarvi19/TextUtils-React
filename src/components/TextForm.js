@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+  
   const [text, setText] = useState("");
 
   const handleOnChange = (event) => {
@@ -32,6 +33,7 @@ export default function TextForm(props) {
   };
   const handleCopy = () => {
     navigator.clipboard.writeText(text);
+    document.getSelection().removeAllRanges();
     props.showAlert("Copied to clipboard", "success");
   };
 
@@ -39,7 +41,7 @@ export default function TextForm(props) {
     <div className={`text-${props.mode === "dark" ? "light" : "dark"}`}>
       <div>
         <h1>{props.heading}</h1>
-        <div className="mb-3">
+        <div className="mb-4">
           <textarea
             className="form-control"
             id="myBox"
@@ -52,19 +54,19 @@ export default function TextForm(props) {
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleClear}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClear}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={removeExtraSpaces}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={removeExtraSpaces}>
           Remove Extra Spaces
         </button>
       </div>
@@ -85,7 +87,7 @@ export default function TextForm(props) {
         <p>
           {text.length > 0
             ? text
-            : "Enter something in the textbox above to preview here"}
+            : "Nothing to preview"}
         </p>
       </div>
     </div>

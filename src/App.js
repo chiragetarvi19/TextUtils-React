@@ -50,7 +50,7 @@ function App() {
             <Route exact path="/">
               <TextForm
                 showAlert={showAlert}
-                heading="Enter the text to analyze below"
+                heading="Try TextUtils - Play with your Text"
                 mode={mode}
               />
             </Route>
