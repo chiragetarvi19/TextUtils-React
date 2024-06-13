@@ -37,14 +37,8 @@ TextUtils is a React single-page application designed to help users manipulate t
 
 5. Open your browser and visit http://localhost:3000 to view the application.
 
-Usage
 
--> Sign up or log in to your NetflixAI account.
--> Enter your movie preferences or search queries in the search bar.
--> Explore personalized movie recommendations based on your input.
--> Click on a movie to view more details and watch options.
-
-Contributing
+## Contributing
 
 We welcome contributions from the community. If you'd like to contribute to NetflixAI, please follow these steps:
 
